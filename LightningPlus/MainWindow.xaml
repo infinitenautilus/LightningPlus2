@@ -41,7 +41,15 @@
             <StatusBarItem x:Name="statusDebug" Content="Debugger" BorderBrush="DarkGray" BorderThickness="1"/>
             <ProgressBar x:Name="statusProgressBar" />
         </StatusBar>
-
+        
+        <!-- ToolBar -->
+        <ToolBarTray DockPanel.Dock="Top" Background="DarkGray">
+            <ToolBar>
+                <Button Name="NewButton" Click="ViewZoomReset_Click">
+                    <Image Source="E:\Froggy Entertainment\Visual Studio Projects\new_toolbaricon.png" Width="16" Height="16"/>
+                </Button>
+            </ToolBar>
+        </ToolBarTray>
         <!-- Map Control -->
         <wpf:GMapControl x:Name="MapProjector" MouseMove="GMapMouseMoveEvent" Opacity="1" />
     </DockPanel>

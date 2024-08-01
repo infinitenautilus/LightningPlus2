@@ -1,4 +1,5 @@
 ﻿using GMap.NET.MapProviders;
+using GMap.NET;
 using GMap.NET.WindowsPresentation;
 using System.Text;
 using System.Windows;
@@ -28,7 +29,7 @@ namespace LightningPlus
         {
             MapProjector.MapProvider = GMapProviders.OpenStreetMap;
             MapProjector.CacheLocation = @".\cache\";
-            MapProjector.Position = new GMap.NET.PointLatLng(40, -102);
+            MapProjector.Position = new PointLatLng(40, -102);
             MapProjector.MinZoom = 1;
             MapProjector.MaxZoom = 15;
             MapProjector.Zoom = 3;
@@ -63,6 +64,12 @@ namespace LightningPlus
             {
                 MapProjector.Zoom -= 1;
             }
+        }
+
+        private void ViewZoomReset_Click(object sender, RoutedEventArgs e)
+        {
+            MapProjector.Zoom = 3;
+            MapProjector.Position = new PointLatLng(40, -102);
         }
     }
 }
